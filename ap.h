@@ -76,7 +76,7 @@ public:
 
     Transicao get_transicao(const Estado& de, char com, char topo_pilha);
 
-    bool validar_palavra(string palavra);
+    bool validar_palavra(const string& palavra);
 
     bool add_simbolo_alfabeto(char simbolo);
 };

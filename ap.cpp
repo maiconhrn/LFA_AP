@@ -6,13 +6,13 @@
 #include "ap.h"
 #include "Pilha.h"
 
-bool AP::validar_palavra(string palavra) {
+bool AP::validar_palavra(const string &palavra) {
     Estado atual = inicial;
     Pilha<char> pilha = Pilha<char>();
     pilha.push(base);
 
-    for (const char &i : alfabeto.simbolos) {
-        if (existe_transicao(atual, pilha.get_topo(), i)) {
+    for (const char &i : palavra) {
+        if (existe_transicao(atual, i, pilha.get_topo())) {
             Transicao t = get_transicao(atual, i, pilha.get_topo());
             atual = t.para;
             pilha.pop();
