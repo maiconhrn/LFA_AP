@@ -40,8 +40,8 @@ public:
     Estado de;
     char com;
     char topo_pilha;
-    vector<char> inserir_pilha;
     Estado para;
+    vector<char> inserir_pilha;
 
     Transicao();
 
@@ -59,26 +59,36 @@ private:
     vector<Transicao> transicoes;
     Estado inicial;
     char base;
-    vector<char> simbulos_auxiliares;
+    vector<char> simbolos_auxiliares;
 
 public:
     AP();
 
-    bool existe_estado(Estado estado);
+    bool existe_estado(string nome_estado);
+
+    bool existe_simbolo_alfabeto(char simbolo);
 
     bool add_estado(Estado estado);
+
+    bool existe_simbolo_auxiliar(char simbolo_auxiliar);
+
+    bool add_simbolo_auxiliar(char simbolo_auxiliar);
+
+    bool define_estado_inicial(string nome_estado);
+
+    bool define_base(char simbolo);
 
     Estado &achar_estado(string nome_estado);
 
     bool add_transicao(Transicao transicao);
-
-    bool existe_transicao(const Estado& de, char com, char top_pilha);
 
     Transicao get_transicao(const Estado& de, char com, char topo_pilha);
 
     bool validar_palavra(string palavra);
 
     bool add_simbolo_alfabeto(char simbolo);
+
+    void imprimir_transicoes();
 };
 
 #endif //AP_AP_H
