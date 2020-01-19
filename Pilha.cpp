@@ -25,7 +25,6 @@ void Pilha<T>::pop() {
         return;
     }
 
-//    cout << "Pilha vazia";
 }
 
 template<typename T>
@@ -47,8 +46,6 @@ T Pilha<T>::get_topo() {
     if (!is_vazia()) {
         return topo->valor;
     }
-
-//    cout << "Pilha vazia" << endl;
 
     return NULL;
 }

@@ -198,14 +198,3 @@ bool Transicao::operator!=(const Transicao &rhs) const
 {
     return !(rhs == *this);
 }
-
-void AP::imprimir_transicoes()
-{
-    for (int i = 0; i < transicoes.size(); i++)
-    {
-        cout << "De: " << transicoes[i].de.nome << "\n";
-        cout << "Com: " << transicoes[i].com << "\n";
-        cout << "Topo pilha: " << transicoes[i].topo_pilha << "\n";
-        cout << "Para: " << transicoes[i].para.nome << "\n";
-    }
-}

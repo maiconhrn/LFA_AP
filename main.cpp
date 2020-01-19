@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include "ap.h"
-#include "Pilha.h"
 
 using namespace std;
 

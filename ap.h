@@ -88,7 +88,6 @@ public:
 
     bool add_simbolo_alfabeto(char simbolo);
 
-    void imprimir_transicoes();
 };
 
 #endif //AP_AP_H
