@@ -60,7 +60,8 @@ int main() {
                 try {
 
                     cout << "A Palavra \"" << palavra_a_validar << "\" eh "
-                         << (ap.validar_palavra(palavra_a_validar) ? "VALIDA" : "INVALIDA") << endl << endl;
+                         << (ap.validar_palavra(palavra_a_validar.length() <= 0 ? "V" : palavra_a_validar)
+                            ? "VALIDA" : "INVALIDA") << endl << endl;
                 } catch (const char *e) {
                     cout << e << "\n";
                 }
