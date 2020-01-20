@@ -37,11 +37,11 @@ public:
 
 class Transicao {
 public:
-    Estado de;
-    char com;
-    char topo_pilha;
-    Estado para;
-    vector<char> inserir_pilha;
+    Estado de; // estado base
+    char com; // simbulo do alfabeto
+    char topo_pilha; // topo da pilha na hora da validação
+    Estado para; // estado alvo
+    vector<char> inserir_pilha; //lista de simboloa a serem adicionados na pilha na hora da validação
 
     Transicao();
 
@@ -52,6 +52,7 @@ public:
     bool operator!=(const Transicao &rhs) const;
 };
 
+// classe que abstrai um automato com pilha; tem como propriedades a sua descrição formal
 class AP {
 private:
     vector<Estado> estados;

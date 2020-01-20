@@ -9,12 +9,14 @@
 
 using namespace std;
 
+// pilha é uma lista ligada por nos, cada no tem uma referencia pra proximo da lista
 template<typename T>
 struct no {
     T valor;
     no *prox;
 };
 
+// pilha é uma lista ligada por nos
 template<typename T>
 class Pilha {
     no<T> *topo;

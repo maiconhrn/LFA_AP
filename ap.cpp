@@ -6,6 +6,8 @@
 #include "ap.h"
 #include "Pilha.h"
 
+// valida uma palavra com base na descricao formal
+// lida pelo txt
 bool AP::validar_palavra(const string &palavra)
 {
     Estado atual = inicial;
@@ -14,12 +16,12 @@ bool AP::validar_palavra(const string &palavra)
 
     for (const char &i : palavra)
     {
-        Transicao t = get_transicao(atual, i, pilha.get_topo());
+        Transicao t = get_transicao(atual, i, pilha.get_topo()); // verifica se existe a transicao e a retorna
         atual = t.para;
         pilha.pop();
         for (const char &s : t.inserir_pilha)
         {
-            if (s != 'V')
+            if (s != 'V') // verifica se precisa adicionar na pilha; 'v' significa VAZIO
             {
                 pilha.push(s);
             }

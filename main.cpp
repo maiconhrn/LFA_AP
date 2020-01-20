@@ -14,30 +14,36 @@ int main() {
         ifstream apDescricao("ap.txt");
 
         if (!apDescricao.fail()) {
+            // le estados
             apDescricao >> n_estados;
             for(i = 0; i < n_estados; i++) {
                 apDescricao >> nome_estado;
                 ap.add_estado(Estado(nome_estado));
             }
 
+            // le alfabeto
             apDescricao >> n_simbolos_alfabeto;
             for(i = 0; i < n_simbolos_alfabeto; i++) {
                 apDescricao >> simbolo_alfabeto;
                 ap.add_simbolo_alfabeto(simbolo_alfabeto);
             }
 
+            // le estado inicial
             apDescricao >> estado_inicial;
             ap.define_estado_inicial(estado_inicial);
 
+            // le simbolos auxiliares
             apDescricao >> n_simbolos_auxiliares;
             for(i = 0; i < n_simbolos_auxiliares; i++) {
                 apDescricao >> simbolo_auxiliar;
                 ap.add_simbolo_auxiliar(simbolo_auxiliar);
             }
 
+            // le base
             apDescricao >> simbolo_auxiliar;
             ap.define_base(simbolo_auxiliar);
 
+            // le transições
             apDescricao >> n_transicoes;
             for(i=0; i<n_transicoes; i++) {
                 string de, para, inserir_pilha_string;
